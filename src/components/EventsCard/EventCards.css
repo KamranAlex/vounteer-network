@@ -1,0 +1,22 @@
+.event-card {
+  border-radius: 8px !important;
+  padding: 0 !important;
+  box-shadow: 4px 3px 5px 5px gray;
+}
+.event-body {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+.event-name {
+  margin-top: 2px !important;
+  margin-bottom: 4px !important;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+}
+.card button {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
