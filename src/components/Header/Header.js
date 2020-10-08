@@ -78,7 +78,16 @@ const Header = () => {
             )}
 
             <li className='nav-item'>
-              <small className='nav-link user-name'>{loggedInUser.name}</small>
+              <small
+                className='nav-link user-name'
+                style={{
+                  fontSize: "13px",
+                  fontWeight: "600",
+                  color: "#db1d53 ",
+                }}
+              >
+                {loggedInUser.name}
+              </small>
             </li>
           </ul>
         </div>
