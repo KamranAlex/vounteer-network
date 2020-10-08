@@ -16,6 +16,11 @@
   color: rgb(192, 4, 51) !important;
   text-shadow: 0 0 7px rgb(209, 3, 65);
 }
+.user-name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #db1d53 !important;
+}
 .user-name:hover {
   font-size: 13px !important;
   text-shadow: none !important;
