@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./EventCards.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
 const EventsCard = (props) => {
   const eventInfo = props.singleEvent;
@@ -16,9 +18,10 @@ const EventsCard = (props) => {
           onClick={() => {
             handleJoinEvent(eventInfo.id);
           }}
-          className='btn btn-success'
+          className='btn btn-success btn-join'
         >
-          {eventInfo.name}
+          <FontAwesomeIcon icon={faHandHoldingHeart}></FontAwesomeIcon>
+          &#160;&#160;{eventInfo.name}
         </button>
       </div>
     </div>

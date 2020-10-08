@@ -1,0 +1,28 @@
+.regEvent-card {
+  display: flex;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 5px 3px 7px 2px gray;
+}
+.regEvent-img img {
+  float: left;
+  height: 140px;
+}
+.regEvent-body {
+  float: right;
+  position: relative;
+  width: 100%;
+  padding: 10px 20px;
+}
+.regEvent-body h5 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #ffbf00;
+}
+.deleteEvent-btn {
+  position: absolute;
+  bottom: 0;
+}

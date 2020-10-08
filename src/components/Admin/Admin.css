@@ -1,0 +1,34 @@
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: auto;
+  left: 0;
+  background-color: lightgray;
+  overflow-x: hidden;
+  padding-top: 20px;
+  box-shadow: 3px 0 6px gray;
+}
+
+.admin-menu {
+  padding: 6px 4px 10px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  display: block;
+}
+
+.admin-menu:hover {
+  font-weight: 400;
+  color: #aa8b01 !important;
+  text-shadow: 0 0 5px rgb(255 202 0);
+  text-decoration: none;
+}
+
+.user-list {
+  width: 100% !important;
+  margin-left: 100px;
+  padding: 0px 10px;
+}

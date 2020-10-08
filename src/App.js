@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Register from "./components/Register/Register";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import MyEvents from "./components/MyEvents/MyEvents";
+import Admin from "./components/Admin/Admin";
+import CreateEvent from "./components/CreateEvent/CreateEvent";
 
 export const UserContext = createContext();
 
@@ -23,6 +25,12 @@ function App() {
 
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/admin'>
+            <Admin></Admin>
+          </Route>
+          <Route path='/createEvent'>
+            <CreateEvent></CreateEvent>
           </Route>
 
           <PrivateRoute path='/myEvents'>

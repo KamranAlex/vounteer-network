@@ -1,0 +1,40 @@
+.login-container {
+  border: 1px solid lightgray;
+  height: 340px;
+  width: 50%;
+  margin: 40px auto;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  box-shadow: 5px 3px 8px 2px gray;
+}
+.social-icon {
+  margin-right: 10px;
+}
+.social-icon img {
+  height: 30px;
+}
+
+.social-text {
+  padding-right: 30px;
+}
+.social-text p {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.google-login {
+  border: 1px solid gray;
+  border-radius: 30px;
+  width: 60%;
+  margin: 20px auto;
+  padding: 10px 10px 10px 10px;
+}
+.google-login:hover {
+  outline: none;
+  box-shadow: 0 0 3pt 2pt #dc3545;
+}
+
+.google-login:focus {
+  outline: none;
+}

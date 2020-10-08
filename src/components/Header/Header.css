@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+}
+.main-logo img {
+  height: 50px;
+}
+.navigation-manu {
+  position: absolute !important;
+  right: 60px;
+}
+.nav-link {
+  color: rgb(3, 110, 160) !important;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: rgb(192, 4, 51) !important;
+  text-shadow: 0 0 7px rgb(209, 3, 65);
+}
+.btn-admin {
+  color: #fff !important;
+  background-color: rgb(90, 89, 89) !important;
+  border-color: gray !important;
+}
+.btn-admin:hover {
+  color: #fff !important;
+  background-color: rgb(223, 16, 136) !important;
+  border-color: rgb(223, 16, 136) !important;
+}

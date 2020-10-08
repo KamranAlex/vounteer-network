@@ -1,31 +1,35 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import Logo from "../../logos/Group 1329.png";
+import "./Header.css";
 
 const Header = () => {
   const [loggedInUser, setloggedInUser] = useContext(UserContext);
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-      <div className='container'>
-        <a className='navbar-brand' href='/'>
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/logos/user-alt 1.png`}
-            alt=''
-          />
-        </a>
-        <button
-          className='navbar-toggler'
-          type='button'
-          data-toggle='collapse'
-          data-target='#navbarNav'
-          aria-controls='navbarNav'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
+    <nav className='navbar navbar-expand-lg navbar-light mb-4'>
+      <div className='container navigation'>
+        <div className='main-logo'>
+          <Link to='/' className='navbar-brand'>
+            <img src={Logo} alt='' />
+          </Link>
+          <button
+            className='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarNav'
+            aria-controls='navbarNav'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+          >
+            <span className='navbar-toggler-icon'></span>
+          </button>
+        </div>
+        <div
+          className='collapse navbar-collapse navigation-manu'
+          id='navbarNav'
         >
-          <span className='navbar-toggler-icon'></span>
-        </button>
-        <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav'>
             <li className='nav-item'>
               <Link className='nav-link' to='/'>
@@ -38,13 +42,20 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item'>
+              <Link className='nav-link' to='/'>
+                Blog
+              </Link>
+            </li>
+            <li className='nav-item'>
               <Link className='nav-link' to='/myEvents'>
                 My Events
               </Link>
             </li>
-            <li className='nav-item '>
-              <Link to='/'>
-                <button className='btn btn-primary ml-2'>Admin</button>
+            <li className='nav-item'>
+              <Link to='/admin'>
+                <button className='btn btn-primary ml-2 btn-admin'>
+                  Admin
+                </button>
               </Link>
             </li>
             {loggedInUser.email ? (

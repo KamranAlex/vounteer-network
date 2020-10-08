@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Sansita+Swashed:wght@500;700&display=swap");
+
+.event-search {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.slogan-text {
+  font-family: "Lobster", cursive;
+  /* font-family: "Sansita Swashed", cursive; */
+}
+.event-search input {
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border: 2px solid gray;
+  border-right: 0;
+  height: 35px !important;
+}
+.event-search input:focus {
+  outline: none !important;
+  -moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: 0 0 5px 5px #888;
+}
+.event-search button {
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-left: 0;
+  outline: none !important;
+  height: 35px !important;
+}

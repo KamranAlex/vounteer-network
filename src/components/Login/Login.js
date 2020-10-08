@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import googleICON from "../../logos/google.png";
+import "./Login.css";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
@@ -24,6 +26,7 @@ const Login = () => {
         const { displayName, email } = result.user;
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
+        storeAuthToken();
         history.replace(from);
       })
       .catch(function (error) {
@@ -31,11 +34,37 @@ const Login = () => {
         console.log(errorMessage);
       });
   };
+
+  const storeAuthToken = () => {
+    firebase
+      .auth()
+      .currentUser.getIdToken(true)
+      .then(function (idToken) {
+        sessionStorage.setItem("token", idToken);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   return (
-    <div className='text-center'>
-      <div>
-        <h1>Login with Google</h1>
-        <button onClick={handleGoogleSignIn}>Google Sign in</button>
+    <div className='container'>
+      <div className='row text-center'>
+        <div className='login-container'>
+          <div className='container'>
+            <h1 className='mb-4'>Sign In</h1>
+            <button
+              onClick={handleGoogleSignIn}
+              className='google-login d-flex justify-content-between'
+            >
+              <div className='social-icon'>
+                <img src={googleICON} alt='' />
+              </div>
+              <div className='social-text'>
+                <p> Continue with Google</p>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
