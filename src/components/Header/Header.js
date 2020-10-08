@@ -78,9 +78,7 @@ const Header = () => {
             )}
 
             <li className='nav-item'>
-              <small className='nav-link text-success'>
-                {loggedInUser.name}
-              </small>
+              <small className='nav-link user-name'>{loggedInUser.name}</small>
             </li>
           </ul>
         </div>
