@@ -12,7 +12,7 @@ const Admin = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/allUser")
+    fetch("https://aqueous-atoll-91889.herokuapp.com/allUser")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -21,7 +21,7 @@ const Admin = () => {
 
   const deleteEvent = (e, id) => {
     e.persist();
-    fetch(`http://localhost:4000/delete/${id}`, {
+    fetch(`https://aqueous-atoll-91889.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

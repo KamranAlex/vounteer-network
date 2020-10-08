@@ -7,13 +7,17 @@ const MyEvents = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:4000/myEvents?email=" + loggedInUser.email, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${sessionStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      "https://aqueous-atoll-91889.herokuapp.com/myEvents?email=" +
+        loggedInUser.email,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setRegEvents(data);
@@ -22,7 +26,7 @@ const MyEvents = () => {
 
   const deleteEvent = (e, id) => {
     e.persist();
-    fetch(`http://localhost:4000/delete/${id}`, {
+    fetch(`https://aqueous-atoll-91889.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

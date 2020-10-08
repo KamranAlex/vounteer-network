@@ -23,7 +23,7 @@ const CreateEvent = () => {
     setEvenetData(newEvent);
   };
   const handleCreateEvent = (e) => {
-    fetch("http://localhost:4000/createEvent", {
+    fetch("https://aqueous-atoll-91889.herokuapp.com/createEvent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -7,7 +7,7 @@ import CreatedEventCard from "../EventsCard/CreatedEventCard";
 const Home = () => {
   const [createdEvents, setCreatedEvents] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/createdEvent")
+    fetch("https://aqueous-atoll-91889.herokuapp.com/createdEvent")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

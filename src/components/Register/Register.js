@@ -25,7 +25,7 @@ const Register = () => {
   };
 
   const handleRegistration = (e) => {
-    fetch("http://localhost:4000/registration", {
+    fetch("https://aqueous-atoll-91889.herokuapp.com/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
