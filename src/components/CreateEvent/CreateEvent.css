@@ -42,6 +42,12 @@
   margin: auto !important;
   box-shadow: none !important;
 }
+input {
+  color: #f9a51a;
+}
+.form-control-file {
+  color: rgb(11, 143, 167) !important;
+}
 .create-btn button {
   font-size: 18px;
   padding: 5px;

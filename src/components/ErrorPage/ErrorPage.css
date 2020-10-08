@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Sansita+Swashed:wght@500;700&display=swap");
+
+.error {
+  display: flex;
+  justify-content: center;
+  margin: 150px;
+}
+.error-code {
+  font-size: 60px;
+  font-weight: 700;
+}
+.error-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+.comming-soon {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffd21d;
+  /* font-family: "Lobster", cursive; */
+  font-family: "Sansita Swashed", cursive;
+}

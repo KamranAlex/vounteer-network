@@ -16,7 +16,7 @@ const CreatedEventCard = (props) => {
         <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3RcPqetZMxRhAdfp6tD2lxDrIKTlewNHp4g&usqp=CAU'
           alt='...'
-          style={{ height: "246px" }}
+          style={{ height: "246px", borderRadius: "7px" }}
         />
         <button
           onClick={() => {

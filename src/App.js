@@ -9,6 +9,8 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import MyEvents from "./components/MyEvents/MyEvents";
 import Admin from "./components/Admin/Admin";
 import CreateEvent from "./components/CreateEvent/CreateEvent";
+import CommingSoon from "./components/ErrorPage/CommingSoon";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 export const UserContext = createContext();
 
@@ -26,9 +28,11 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
+
           <Route path='/admin'>
             <Admin></Admin>
           </Route>
+
           <Route path='/createEvent'>
             <CreateEvent></CreateEvent>
           </Route>
@@ -40,6 +44,14 @@ function App() {
           <PrivateRoute path='/register/:id'>
             <Register></Register>
           </PrivateRoute>
+
+          <Route path='/commingSoon'>
+            <CommingSoon></CommingSoon>
+          </Route>
+
+          <Route path='*'>
+            <ErrorPage></ErrorPage>
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>
