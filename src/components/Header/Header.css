@@ -17,9 +17,9 @@
   text-shadow: 0 0 7px rgb(209, 3, 65);
 }
 .nav-link .user-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #db1d53;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #db1d53 !important;
 }
 .btn-admin {
   color: #fff !important;
