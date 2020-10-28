@@ -29,7 +29,7 @@ function App() {
             <Login></Login>
           </Route>
 
-          <PrivateRoutepath='/admin'>
+          <PrivateRoute path='/admin'>
             <Admin></Admin>
           </PrivateRoute>
 
