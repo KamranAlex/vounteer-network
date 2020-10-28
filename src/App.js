@@ -29,9 +29,9 @@ function App() {
             <Login></Login>
           </Route>
 
-          <Route path='/admin'>
+          <PrivateRoutepath='/admin'>
             <Admin></Admin>
-          </Route>
+          </PrivateRoute>
 
           <Route path='/createEvent'>
             <CreateEvent></CreateEvent>

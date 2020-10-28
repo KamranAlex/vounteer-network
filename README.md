@@ -1,4 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Volunteer Network
+
+## _[Go Live](https://volunteer-network-98347.firebaseapp.com/)_
+
+## Main Features :
+   - **Full-stack website that encourage people to Participate in different social tasks.**
+   - **User/Volunteer can choose & select and event homepage.**
+   - **User/Volunteer need to login with google in order to register for an event.**
+   - **User/Volunteer can view his registerd events.**
+   - **Only Admin Can delete any registered user from the dashboard.**
+   - **Admin can create new event to the database .**
+   
+
+## Tools Used:
+   - React.js
+   - Express.js
+   - MongoDB
+   - Firebase
+   - HTML
+   - CSS
+   - Bootstrap
+
+#### _[Packages Used](./package.json)_
 
 ## Available Scripts
 
