@@ -10,30 +10,35 @@ import "./CreateEvent.css";
 
 const CreateEvent = () => {
   const history = useHistory();
-  const [eventData, setEvenetData] = useState({
-    name: "",
-    description: "",
-    date: "",
-    img: "",
-  });
+  const [eventData, setEvenetData] = useState({});
+  const [file, setFile] = useState(null);
 
   const handleBlur = (e) => {
     const newEvent = { ...eventData };
     newEvent[e.target.name] = e.target.value;
     setEvenetData(newEvent);
   };
+  const handleFileChange = (e) => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
+
   const handleCreateEvent = (e) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", eventData.name);
+    formData.append("description", eventData.description);
     fetch("https://aqueous-atoll-91889.herokuapp.com/createEvent", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(eventData),
+      body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         history.push("/");
+      })
+      .catch((error) => {
+        console.error(error);
       });
 
     e.preventDefault();
@@ -77,16 +82,6 @@ const CreateEvent = () => {
               </div>
             </div>
             <div className='form-right col-md-6'>
-              <div>
-                <label for='Date'>Date:</label>
-                <input
-                  className='form-control'
-                  type='date'
-                  name='date'
-                  onBlur={handleBlur}
-                  required
-                />
-              </div>
               <div className='mt-2'>
                 <label for='file Upload'>
                   Upload Image{" "}
@@ -95,8 +90,8 @@ const CreateEvent = () => {
                 <input
                   type='file'
                   className='form-control-file'
-                  id=''
-                  name='img'
+                  onChange={handleFileChange}
+                  required
                 />
               </div>
             </div>

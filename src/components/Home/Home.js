@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import fakeData from "../fakeData/fakeData";
 import EventsCard from "../EventsCard/EventsCard";
 import "./Home.css";
-import CreatedEventCard from "../EventsCard/CreatedEventCard";
+import { faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const [createdEvents, setCreatedEvents] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     fetch("https://aqueous-atoll-91889.herokuapp.com/createdEvent")
       .then((res) => res.json())
@@ -14,6 +17,10 @@ const Home = () => {
         setCreatedEvents(data);
       });
   }, []);
+
+  const handleJoinEvent = (id) => {
+    history.push(`/register/${id}`);
+  };
 
   return (
     <div>
@@ -30,9 +37,28 @@ const Home = () => {
             <EventsCard singleEvent={singleEvent}></EventsCard>
           ))}
           {createdEvents.map((newCreatedEvent) => (
-            <CreatedEventCard
-              newCreatedEvent={newCreatedEvent}
-            ></CreatedEventCard>
+            <div className='col-md-3'>
+              <div className='card event-card mt-4'>
+                <img
+                  src={`data:image/png;base64,${newCreatedEvent.image.img}`}
+                  alt='...'
+                  style={{
+                    height: "299px",
+                    maxWidth: "253px",
+                    borderRadius: "8px",
+                  }}
+                />
+                <button
+                  onClick={() => {
+                    handleJoinEvent(newCreatedEvent._id);
+                  }}
+                  className='btn btn-success btn-join'
+                >
+                  <FontAwesomeIcon icon={faHandHoldingHeart}></FontAwesomeIcon>
+                  &#160;&#160;{newCreatedEvent.name}
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>
