@@ -8,6 +8,15 @@ import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const [createdEvents, setCreatedEvents] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const handleChange = (e) => setSearch(e.target.value);
+  const filteredEvents = fakeData.filter((flEvents) => {
+    return (
+      flEvents.name.toLowerCase().indexOf(search.toLocaleLowerCase()) !== -1
+    );
+  });
+
   const history = useHistory();
   useEffect(() => {
     fetch("https://aqueous-atoll-91889.herokuapp.com/createdEvent")
@@ -28,12 +37,16 @@ const Home = () => {
         <div className='slogan text-center'>
           <h2 className='slogan-text'>I Grow by Helping People in Need</h2>
           <div className='event-search'>
-            <input type='text' />
+            <input
+              type='text'
+              placeholder='Search an Event'
+              onChange={handleChange}
+            />
             <button className='btn-primary'>Search</button>
           </div>
         </div>
         <div className='row'>
-          {fakeData.map((singleEvent) => (
+          {filteredEvents.map((singleEvent) => (
             <EventsCard singleEvent={singleEvent}></EventsCard>
           ))}
           {createdEvents.map((newCreatedEvent) => (
